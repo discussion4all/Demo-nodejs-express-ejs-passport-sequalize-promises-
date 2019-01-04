@@ -1,0 +1,27 @@
+<% include head.html %>
+<body>
+	<div class="content-page">
+		<div class="header">
+			<% include header.html %>
+		</div>
+
+		<div class="container homepage">
+			<div class="item-section">
+				<div class="row">
+					<div class="title">
+						<h2 style="margin-top: 0;">Detail</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+	                    <strong>Name</strong>: <%= item.name %><br>
+	                    <strong>Description</strong>: <%= item.description %><br>
+	                    <strong>Count</strong>: <%= item.count %><br>
+	                    <strong>Created At</strong>: <%= item.createdAt %>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<% include head.html %>
+<body>
+	<div class="main-model-page">
+		<div class="model-content">
+			<div class="main-form-div animate">
+				<div class="logo-div">
+					<h2>Login</h2>
+				</div>
+
+				<% if (message.length > 0) { %>
+					<div class="success">
+						<img src="images/success.png">
+						<%= message %>
+					</div>
+				<% } %>
+    			
+				<form action="/" method="post">
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="email" class="form-input" placeholder="Email" name="email" value="<%= (formData) ? formData.email : '' %>">
+							<span class="error">
+        						<%= (error)&&(error.email) ? error.email : '' %>
+        					</span> 
+						</span>
+					</div>
+					<div class="input-field f-table">
+						<span class="input-s"> 
+							<input type="password" class="form-input" placeholder="Password" name="password" value="<%= (formData) ? formData.password : '' %>"> 
+							<span class="error">
+        						<%= (error)&&(error.password) ? error.password : '' %>
+        					</span> 
+						</span>
+					</div>
+
+					<div class="login-button">
+						<input type="submit" class="login-b" value="Log in">
+					</div>
+					<div class="signup">
+						Don't have an account?<a href="/signup"> Sign Up</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

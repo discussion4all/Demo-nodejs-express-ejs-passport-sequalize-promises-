@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<titleSign Up</title>
+
+	<!-- css -->
+	<link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="css/style.css"  rel="stylesheet" type="text/css"/>
+
+	<!-- js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="main-model-page">
+		<div class="model-content">
+			<div class="main-form-div signup-div animate" style="margin-top: 90px;padding-bottom: 20px;">
+				<div class="logo-div">
+					<h2>Registartion</h2>
+				</div>
+
+				<form action="/signup" method="post">
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="text" class="form-input" placeholder="Username" name="username" value="<%= (formData) ? formData.username : '' %>">
+							<span class="error">
+								<%= (error)&&(error.username) ? error.username : '' %>
+							</span>
+						</span>
+					</div>
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="text" class="form-input" placeholder="First Name" name="firstname" value="<%= (formData) ? formData.firstname : '' %>">
+							<span class="error">
+								<%= (error)&&(error.firstname) ? error.firstname : '' %>
+							</span>
+						</span>
+					</div>
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="text" class="form-input" placeholder="Last Name" name="lastname" value="<%= (formData) ? formData.lastname : '' %>">
+							<span class="error">
+								<%= (error)&&(error.lastname) ? error.lastname : '' %>
+							</span>
+						</span>
+					</div>
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="email" class="form-input" placeholder="Email" name="email" value="<%= (formData) ? formData.email : '' %>">
+							<span class="error">
+								<%= (error)&&(error.email) ? error.email : '' %>
+							</span>
+						</span>
+					</div>
+					
+					<div class="input-field f-table">
+						<span class="input-s">
+							<input type="password" class="form-input" placeholder="Password" name="password" value="<%= (formData) ? formData.password : '' %>"> 
+							<span class="error">
+								<%= (error)&&(error.password) ? error.password : '' %>
+							</span>
+						</span>
+					</div>
+					<div class="login-button">
+						<input type="submit" class="login-b" value="Sign up">
+					</div>
+					<div class="signup"><a href="/">Already have an account?</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

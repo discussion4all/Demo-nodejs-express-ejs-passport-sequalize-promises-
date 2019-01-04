@@ -1,0 +1,44 @@
+<% include head.html %>
+<body>
+	<div class="content-page">
+		<div class="header">
+			<% include header.html %>
+		</div>
+
+		<div class="container homepage">
+			<h2> Items </h2>
+			<form action="/home" method="post" class="form-horizontal">
+				<div class="input-field">
+					<input class="form-input" type="text" placeholder="Search Item" name="search" value="<%= (search) ? search : '' %>" />
+				</div>
+				<br />
+				<input type="submit" class="btn btn-success" value="Search">
+			</form>
+			<br />
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Count</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(var item in items) { %> 
+					<tr>
+						<td><%= items[item].name  %></td>
+						<td><%= items[item].description  %></td>
+						<td><%= items[item].count  %></td>
+						<td><a href="/view/<%= items[item].id %>" role="button" class="btn btn-dark">View</a></td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+
+			<a href="/add" role="button" class="btn btn-info">Add New Item</a>
+			
+		</div>
+	</div>
+</body>
+</html>

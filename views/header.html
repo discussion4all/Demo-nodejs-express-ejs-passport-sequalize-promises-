@@ -1,0 +1,27 @@
+<div class="container navbar">
+<div class="menu-open">
+	<div class="rightmenu">
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li class="dropdown">
+				<a href="" data-toggle="dropdown">	
+					<%= user.username %>
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="/logout">Log out</a></li>
+				</ul>
+
+			</li>
+		</ul>
+	</div></div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$(".toggle-button").click(function(){
+			$(".menu-open").toggle("slow");
+
+		});
+	});
+</script>

@@ -1,0 +1,567 @@
+body{
+	font-family: 'Signika', sans-serif !important;
+    background-color: rgb(245,245,245);
+    color: #000000;
+}
+
+.main-model-page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(245,245,245);
+    color: rgb(80,80,80);
+}
+
+.main-model-page:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.05em;
+}
+
+
+
+.model-content {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 90%;
+    
+}
+
+
+.main-form-div {
+    max-width: 500px;
+    width: 90%;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 50px 10px;
+}
+.logo-div img {
+    max-width: 250px;
+    margin-top: -120px;
+}
+
+.logo{
+    display: block;
+    height: 40px;
+}
+
+.input-field.f-table {
+    display: table;
+    width: 100%;
+}
+
+.input-field.f-table > span {
+    display: table-cell;
+    padding: 10px;
+}
+
+span.icon-s {
+    width: 40px;
+}
+
+span.icon-s  img {
+    max-width: 25px;
+}
+
+input.form-input:focus {
+    outline: none;
+    background-image: linear-gradient(#017299, #017299), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
+}
+.forget-pass {
+    float: right;
+    float: right;
+    line-height: 47px;
+    padding-right: 12px;
+}
+.remenber-me.remember_forget-pass .checkbox {
+    float: left;
+}
+
+.remenber-me.remember_forget-pass {
+    display: inline-block;
+    width: 100%;
+}
+
+input.form-input {
+    border: 0;
+    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    transition: background 0s ease-out;
+    float: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-weight: 400;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin: 25px 0!important; 
+}
+
+.submit-button {
+    margin-top: 35px;
+}
+
+/*CHECKBOX_START*/
+
+.checkbox input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+}
+
+.checkbox .checkbox-material:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.84);
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+    transform: scale3d(2.3, 2.3, 1);
+    top: -7px;
+}
+
+.checkbox input[type=checkbox]:not(:checked)+.checkbox-material:before {
+    animation: rippleOff 500ms;
+}
+
+.checkbox .checkbox-material .check {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, .54);
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.checkbox .checkbox-material .check:before {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    display: block;
+    margin-top: -3px;
+    margin-left: 7px;
+    width: 0;
+    height: 0;
+    background: red;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+    animation: checkbox-off 0.3s forwards;
+}
+
+.checkbox input[type=checkbox]:checked+.checkbox-material .check:before {
+    color: #FFFFFF;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    animation: checkbox-on 0.3s forwards;
+}
+
+.checkbox input[type=checkbox]:checked+.checkbox-material:before {
+    animation: rippleOn 500ms;
+}
+
+.checkbox input[type=checkbox]:checked+.checkbox-material .check {
+    background: #017299;
+}
+
+.error {
+    color: #d90022;
+    float: left;
+}
+
+.error img {
+    margin-right: 10px;
+    float: left;
+}
+
+.success {
+    color: #549b47;
+    line-height: 25px;
+    display: inline-block;
+}
+
+.success img {
+    margin-right: 10px;
+    float: left;
+}
+
+@keyframes checkbox-on {
+    0% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+    }
+    50% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+    }
+    100% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    }
+}
+
+@keyframes rippleOff {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rippleOn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.checkbox .checkbox-material {
+    vertical-align: middle;
+    position: relative;
+    top: 4px;
+    padding-right: 10px;
+}
+
+.remenber-me .checkbox {
+    text-align: left;
+    padding-left: 38px;
+    margin: 8px 0;
+}
+
+/*CHECKBOX_END*/
+
+
+.ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+
+input.login-b {
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    padding: 12px 30px;
+    margin: 10px 1px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 2px 0 rgba(1, 114, 153, 0.14), 0 3px 1px -2px rgba(1, 114, 153, 0.2), 0 1px 5px 0 rgba(1, 114, 153, 0.12);
+    background-color: #017299;
+    color: #FFFFFF;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 18px;
+    font-size: 15px;
+    transition: all 0.5s; 
+}
+
+input.login-b[disabled] {
+    cursor: default;
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+input.login-b:hover{
+    box-shadow: 0 14px 26px -12px rgba(1, 114, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(1, 114, 153, 0.2);
+}
+
+input.login-b:active{
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+}
+
+.signup a {
+    color: #017299;
+}
+
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.4s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0.8)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0.8)} 
+    to {transform: scale(1)}
+}
+
+
+.header .leftmenu {
+    float: left;
+}
+
+.header .rightmenu {
+    float: right;
+}
+
+.header {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar ul li ul.dropdown-menu li{
+    width: 100%;
+}
+
+.content-page {
+    background-color: rgb(245,245,245);
+}
+
+.container {
+    color: rgb(80,80,80);
+}
+
+.container.navbar{
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    min-height: auto;
+}
+
+.navbar li a {
+    padding: 0 10px;
+    display: block;
+    line-height: 40px;
+    color: #555;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar li a img {
+    margin-right: 6px;
+}
+
+.profile-pic {
+    text-align: center;
+    padding-top: 54px;
+}
+
+.profile-pic img {
+    max-width: 250px;
+    box-shadow: 0px 2px 12px -4px #000;
+}
+
+.profile-section input.form-input{
+    border: 1px solid #A8A8A8;
+    padding-left: 12px;
+    background-image: none;
+}
+
+.profile-section input.form-input:hover{
+    box-shadow: 0px 0px 10px -5px #000;
+}
+
+
+.profile-section .input-field{
+    margin: 20px 0;
+}
+
+
+.profile-section input.form-input:focus{
+    background-image: linear-gradient(#017299, #017299), linear-gradient(#D2D2D2, #D2D2D2);
+    box-shadow: 0px 0px 10px -5px #000;
+}
+
+.profile-section input.form-input:disabled {
+    background: #f1f1f17d;
+}
+
+button.toggle-button {
+    display: none;
+}
+
+.homepage a:hover, .homepage a {
+    color: #ffffff;
+}
+
+.homepage a:focus , .homepage a:active {
+    color: #ffffff;
+}
+
+.homepage {
+    margin: 0 auto;
+    padding: 25px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.homepage .title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.homepage .radio label {
+    margin-right: 15px;
+}
+
+.homepage input[type='radio'] {
+    margin-top: 5px;
+}
+
+.profile-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border-top: 1px solid red;
+    background-color: white;
+}
+/*FOR RESPONSIVE*/
+
+@media only screen and (max-width: 767px) {
+   .logo-div img {
+    max-width: 180px;
+    margin-top: -100px;
+}
+.main-form-div{
+    width: 100%;
+}
+
+.checkbox , .forget-pass {
+    float: none !important;
+    line-height: 30px;
+}
+
+.remenber-me .checkbox {
+    padding-left: 0;
+}
+
+.col-sm-4.pull-right {
+    float: none !important;
+}
+
+.profile-pic{
+    padding: 0;
+    padding-bottom: 25px;
+}
+
+.submit-butoon {
+    text-align: center;
+}
+
+.profile-section {
+    padding: 28px 0;
+}
+
+button.toggle-button , .navbar ul li {
+    display: block;
+}
+
+.header .leftmenu , .header .rightmenu{
+    float: none;
+}
+button.toggle-button {
+    float: right;
+    background: no-repeat;
+    border: none;
+}
+.menu-open{
+    display: none;
+}
+.header{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.model-content {
+    padding-bottom: 30px;
+}
+
+ul.dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background: none;
+    box-shadow: none;
+    color: #555;
+}
+.navbar ul li:hover .dropdown-menu{
+    display: block !important; 
+}
+}
+
+@media only screen and (min-width: 768px) {
+.menu-open {
+    display: block !important;
+} 
+}

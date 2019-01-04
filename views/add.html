@@ -1,0 +1,57 @@
+<% include head.html %>
+<body >
+	<div class="content-page">
+		<div class="header">
+			<% include header.html %>
+		</div>
+
+		<div class="container homepage">
+			<div class="item-section">
+				<div class="row">
+					<div class="col-md-12">
+						<form action="/add" method="post" class="form-horizontal">
+							<div class="title">
+								<h2 style="margin-top: 0;">Add New Item</h2>
+							</div>
+
+							<% if (message.length > 0) { %>
+								<div class="success">
+									<img src="images/success.png">
+									<%= message %>
+								</div>
+							<% } %>
+
+							
+							<div class="input-field">
+								<label for="name">Name</label>
+								<input type="text" class="form-input" name="name" placeholder="Name">
+								<span class="error">
+        							<%= (error)&&(error.name) ? error.name : '' %>
+        						</span>
+
+							</div>
+							<div class="form-group">
+								<label for="description">Description</label>
+								<textarea class="form-control" name="description" placeholder="Description" rows="3" cols="6"></textarea>
+								<span class="error">
+        							<%= (error)&&(error.description) ? error.description : '' %>
+        						</span>
+							</div>
+							<div class="input-field">
+								<label for="count">Count</label>
+								<input type="number" class="form-input" name="count" placeholder="Count">
+								<span class="error">
+        							<%= (error)&&(error.count) ? error.count : '' %>
+        						</span>
+							</div>
+							<div class="submit-button">
+								<input type="submit" class="login-b" value="Save">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
